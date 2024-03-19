@@ -1,0 +1,6 @@
+## phpstorm ##
+/.idea/
+
+/db/
+
+/logs/

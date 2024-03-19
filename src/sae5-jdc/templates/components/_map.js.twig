@@ -1,0 +1,22 @@
+{% if mapZoom is not defined %}
+{% set mapZoom = 10 %}
+{% endif %}
+
+var map = createMap("{{ mapZoom }}");
+
+var points = [
+    {% if mapPoints is defined %}
+    {% for point in mapPoints %}
+    {% if point is not null %}
+    {lat: {{ point.latitude }}, lng: {{ point.longitude }}, title: '{{ point.name }}'},
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+];
+
+var bounds = new L.LatLngBounds(points);
+map.fitBounds(bounds);
+
+points.forEach(function (point) {
+    L.marker([point.lat, point.lng]).addTo(map).bindPopup(point.title);
+});

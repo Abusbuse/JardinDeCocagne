@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row home-container">
+            <div class="col-md-6">
+                <div class="home-text">
+                    <h2>Accompagner & nourrir</h2>
+                    <p>
+                        La raison d’être des Jardins de Cocagne : <br/>
+                        > acccompagner vers le retour à l’emploi<br/>
+                        > nourrir toutes et tous avec des produits bio, locaux
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 home-image"></div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <!-- Première ligne -->
+                <div class="col-md-4">
+                    <div class="card news-card">
+                        <img src="{{ asset("assets/image.jpg") }}" class="card-img-top" alt="Image Actualité 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Titre Actualité 1</h5>
+                            <p class="card-text">Description de l'actualité 1 sur la culture de légumes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card news-card">
+                        <img src="{{ asset("assets/image.jpg") }}" class="card-img-top" alt="Image Actualité 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Titre Actualité 2</h5>
+                            <p class="card-text">Description de l'actualité 2 sur la culture de légumes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card news-card">
+                        <img src="{{ asset("assets/image.jpg") }}" class="card-img-top" alt="Image Actualité 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Titre Actualité 3</h5>
+                            <p class="card-text">Description de l'actualité 3 sur la culture de légumes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deuxième ligne -->
+                <div class="col-md-4">
+                    <div class="card news-card">
+                        <img src="{{ asset("assets/image.jpg") }}" class="card-img-top" alt="Image Actualité 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Titre Actualité 4</h5>
+                            <p class="card-text">Description de l'actualité 4 sur la culture de légumes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card news-card">
+                        <img src="{{ asset("assets/image.jpg") }}" class="card-img-top" alt="Image Actualité 5">
+                        <div class="card-body">
+                            <h5 class="card-title">Titre Actualité 5</h5>
+                            <p class="card-text">Description de l'actualité 5 sur la culture de légumes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card news-card">
+                        <img src="{{ asset("assets/image.jpg") }}" class="card-img-top" alt="Image Actualité 6">
+                        <div class="card-body">
+                            <h5 class="card-title">Titre Actualité 6</h5>
+                            <p class="card-text">Description de l'actualité 6 sur la culture de légumes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

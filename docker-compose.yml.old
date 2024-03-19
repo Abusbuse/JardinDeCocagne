@@ -1,0 +1,8 @@
+version: '3'
+services:
+  projetsae:
+    image: nginx:latest
+    ports:
+      - "8001:80"
+    volumes:
+    - ./src/index:/usr/share/nginx/html

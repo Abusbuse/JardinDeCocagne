@@ -1,0 +1,29 @@
+.home-container {
+  color: white;
+  background-color: $accentuation-color;
+  margin-bottom: 20px;
+}
+
+.home-image {
+  background-image: url('../home-image.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+}
+
+.home-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.news-card {
+  border: 2px solid $accentuation-color;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  padding-bottom: 20px;
+}

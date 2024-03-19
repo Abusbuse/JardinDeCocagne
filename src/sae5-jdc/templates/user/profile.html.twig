@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Mon profil
+{% endblock %}
+
+{% block body %}
+    <div class="page-container">
+        <a class="btn btn-secondary" href="{{ url('app_structure_list') }}">Retour à la liste des jardins</a>
+        <div class="row">
+            <div class="col-12">
+                <h1>Bienvenue {{ app.user.prenom }} {{ app.user.nom }} !</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <p>
+
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h2>Mes adhésions en cours</h2>
+                <table class="table table-striped-columns table-bordered text-center">
+                    <thead>
+                    <th>Nom du jardin</th>
+                    <th>Date de début</th>
+                    <th>Récurrence</th>
+                    </thead>
+                    <tbody>
+                    {% for adhesion in adhesions %}
+                        <tr>
+                            <td>{{ adhesion.structure.nom }}</td>
+                            <td>{{ adhesion.dateDebut|date }}</td>
+                            <td>Tous les {{ adhesion.typeAdhesion.duree }} jours</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-6">
+                <h2>Mes produits</h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        {% include 'components/_map.js.twig' %}
+    </script>
+{% endblock %}
+

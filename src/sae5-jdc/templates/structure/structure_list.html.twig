@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Liste des jardins
+{% endblock %}
+
+{% block body %}
+    <div class="page-container">
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Structure</th>
+                <th>Ville</th>
+                <th>Adresse</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for structure in structures %}
+                <tr>
+                    <td>{{ structure.nom }}</td>
+                    <td>{{ structure.ville }}</td>
+                    <td>{{ structure.coordCommerciales }}</td>
+                    <td>
+                        <a href="{{ url('app_structure_infos', {structure: structure.id}) }}" class="btn btn-success">
+                            Informations
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div id="map" style="height: 50vh;"></div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        {% include 'components/_map.js.twig' %}
+    </script>
+{% endblock %}
+

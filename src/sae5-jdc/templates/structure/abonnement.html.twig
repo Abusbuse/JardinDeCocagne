@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="row home-container">
+            <div class="home-text">
+                <h2>{{ structure.nom }}</h2>
+                <h3>Nos abonnements:</h3>
+            </div>
+        </div>
+
+        <div class="container">
+            <div>
+                <a href="{{ url("app_abonnement_add", {structure: structure.id}) }}" class="btn btn-primary">
+                    Ajouter un type d'adhésion
+                </a>
+            </div>
+
+            <div class="row">
+                {% for typeAdhesion in structure.typeAdhesion %}
+                    <div class="col-md-4">
+                        <div class="news-card">
+                            <div class="card-body">
+                                <h3 class="card-title">{{ typeAdhesion.label }}</h3>
+                                <p class="card-text">Durée: {{ typeAdhesion.duree }} mois</p>
+                                <p class="card-text">Prix: {{ typeAdhesion.prix }}€</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

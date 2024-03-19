@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} -
+    {% if structure %}
+        Adhérer
+    {% else %}
+        Résilier mon adhésion
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {{ form(form) }}
+{% endblock %}

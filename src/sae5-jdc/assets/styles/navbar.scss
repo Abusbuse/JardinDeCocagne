@@ -1,0 +1,13 @@
+.navbar {
+  background-color: $navbar-color;
+}
+
+.navbar-brand-img {
+  height: 45px;
+}
+
+@media only screen and (min-width: 992px) {
+  .navbar .navbar-nav .nav-item .nav-link {
+    padding: 0 1.5em;
+  }
+}

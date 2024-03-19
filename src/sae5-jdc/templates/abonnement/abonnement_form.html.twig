@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Ajout d'un type d'adhésion
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>Ajout d'un type d'adhésion pour {{ structure.nom }}</h2>
+
+        {{ form_start(form) }}
+        {{ form_row(form.label, {'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.duree, {'attr': {'class': 'form-control'}}) }}
+
+        <button type="submit" class="btn btn-primary">
+            Ajouter
+        </button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+@import "~bootstrap/scss/bootstrap";
+
+$background-color: lightgrey;
+$navbar-color: #21875f;
+$footer-color: $navbar-color;
+$accentuation-color: darkolivegreen;
+
+@import "navbar";
+@import "home";
+
+body {
+  background-image: url('../background.webp');
+  background-size: cover;
+  background-attachment: fixed;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+H1, h2, h3 {
+  text-align: center;
+}
+
+.background-grey {
+  background-color: transparentize($background-color, 0.05);
+
+  min-height: 80vh;
+
+  padding-bottom: 15px;
+}
+
+footer {
+  background-color: $footer-color;
+  height: 20vh;
+}
+
+.container {
+  padding: 0;
+}
+
+.page-container {
+  padding: 20px;
+}

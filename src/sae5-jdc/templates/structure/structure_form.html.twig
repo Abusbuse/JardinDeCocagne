@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} -
+    {% if structure %}
+        Modifier une structure
+    {% else %}
+        Ajouter une structure
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {{ form(form) }}
+{% endblock %}

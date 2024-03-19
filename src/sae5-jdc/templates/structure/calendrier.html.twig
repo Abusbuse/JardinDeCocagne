@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>{{ structure.nom }} - Calendrier des disponibilités</h1>
+        <div>
+            <a href="{{ url("app_calendrier_structure_add", {id: structure.id}) }}" class="btn btn-primary">
+                Ajouter une plage livrable
+            </a>
+        </div>
+
+        <div id="calendar">
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        {% include 'components/_calendar.js.twig' %}
+    </script>
+{% endblock %}

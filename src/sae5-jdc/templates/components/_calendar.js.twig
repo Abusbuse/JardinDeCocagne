@@ -1,0 +1,21 @@
+{% if structure %}
+{% set calendrier = structure.calendrier %}
+{% set id = structure.id %}
+{% elseif depot %}
+{% set calendrier = depot.calendrier %}
+{% set id = depot.id %}
+{% endif %}
+
+var calendar = createCalendar()
+
+{% for plage in calendrier %}
+calendar.addEvent({
+    title: {% if plage.livrable %}'Livrable'{% else %}'Non livrable'{% endif %},
+    start: '{{ plage.dateDebut|date("Y-m-d") }}',
+    end: '{{ plage.dateFin|date("Y-m-d") }}',
+    url: '{{ url('app_calendrier_structure_edit', {id: id, calendrier: plage.id }) }}',
+    color: {% if plage.livrable %}'#378006'{% else %}'red'{% endif %},
+})
+{% endfor %}
+
+calendar.render()
